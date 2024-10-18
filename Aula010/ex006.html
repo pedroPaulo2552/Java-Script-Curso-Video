@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+       #area {
+        font: normal 15pt sans-serif;
+        background-color: rgb(76, 134, 76);
+        color: white;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+       } 
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseleave="saiu()" onmouseenter="entrou()" onmousedown="pressionado()"> 
+        interaja
+    </div> 
+    
+    
+    <script>
+        let d = document.getElementById('area');
+        d.addEventListener('click', clicar);
+        d.addEventListener('mouseleave', saiu);
+        d.addEventListener('mouseenter', entrou);
+        d.addEventListener('mousedown', pressionado);
+        
+        function clicar() {
+          d.innerText = "Mouse Clicou!"  
+          d.style.backgroundColor = 'blue'
+          d.style.color = 'white'
+        }
+
+
+        function saiu() {
+            d.innerText = "Mouse Saiu!"
+            d.style.backgroundColor = 'yellow'
+            d.style.color = "black"
+        }
+
+
+        function entrou() {
+            d.innerText = "Mouse Entrou!"
+            d.style.backgroundColor = 'red'
+        }
+
+        
+        function pressionado() {
+            d.innerText = "Mouse Pressionado!"
+            d.style.backgroundColor = 'pink'
+            d.style.color = 'black'
+        }   
+    </script>
+</body>
+</html>

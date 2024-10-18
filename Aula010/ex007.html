@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Numeros</title>
+    <style>
+        body {
+            font-family: sans-serif;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>  
+    <p>
+        <label for="inum1">Digite um numero: </label>
+        <input type="number" name="num1" id="inum1" required>
+    </p> 
+    
+    <p>
+        <label for="inum2">Digite outro numero:</label>
+        <input type="number" name="num2" id="inum2">
+    </p>
+
+    <p>
+        <input type="submit" value="Somar" id="envio">
+    </p>
+
+    <div id="resultado">
+
+    </div>
+
+
+    <script>
+        let envio = document.getElementById('envio');
+        envio.addEventListener('click', soma)
+        
+        function soma() {
+            let num1 = document.getElementById('inum1').value;
+            let num2 = document.getElementById('inum2').value;
+            let soma = Number(num1) + Number(num2);
+            let divRes = document.getElementById('resultado');
+            divRes.innerHTML = `<h2>O resultado da soma foi ${soma}</h2>`
+        }
+    </script>
+</body>
+</html>
