@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionailidade</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nacionailidade</h1>    
+    <p>
+        <label for="ipais">Pais de origem:</label>
+        <input type="text" name="pais" id="ipais">
+    </p>
+    <p><input type="button" value="Enviar" id="botao"></p>
+    <div id="resposta-block"></div>
+
+
+    <script>
+        let btn = document.getElementById('botao');
+        btn.addEventListener('click', nacionalidade);
+
+        function nacionalidade() {
+            let pais = document.getElementById('ipais').value;
+            let blocoResp = document.getElementById('resposta-block');
+            if (pais === 'Brasil' || pais === 'Brazil') {
+                blocoResp.innerHTML = 'Você é <strong>brasileiro</strong>!';
+            } else {
+                blocoResp.innerHTML = 'Você é <strong>estrangeiro</strong>!';
+            };
+        }
+    </script>
+</body>
+</html>
