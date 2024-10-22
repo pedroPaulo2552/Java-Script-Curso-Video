@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+
+        #div-main {
+            background-color: white;
+            width: 450px;
+            height: 300px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        #imagem {
+            width: 200px;     
+            height: 200px;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hora do dia</h1>    
+    <main>
+        <div id="div-main">
+            <p id="text">Teste</p>
+            <img src="Noite.jpg" alt="" id="imagem">
+        </div>
+    </main>
+
+
+
+    <script>
+        let agora = new Date();
+        let hora = 20;
+        let text = document.getElementById('text');
+        text.innerHTML = `Agora são ${hora} horas`;
+        let img = document.getElementById('imagem');
+        if (hora < 12) {
+            document.body.style.backgroundColor = '#FEC84A';
+            img.setAttribute('src', 'Manha.jpg');
+        } else if (hora < 18) {
+            document.body.style.backgroundColor = '#CE742D';   
+            img.setAttribute('src', 'tarde.jpg'); 
+        } else {
+            document.body.style.backgroundColor =  '#0B1D65';
+            img.setAttribute('src', 'Noite.jpg');
+        }
+    </script>
+</body>
+</html>
