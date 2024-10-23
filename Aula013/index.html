@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: rgb(203, 203, 248);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #div-principal {
+            padding: 10px;
+            background-color: white;
+            width: 500px;
+            border-radius: 20px;
+        }
+
+        #div-resultado {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        #img-result {
+            width: 200px;     
+            height: 200px;
+            border-radius: 100px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Verificador de Idade</h1>  
+    <main>
+        <div id="div-principal">
+            <p>
+                <label for="inasc">Ano de nascimento: </label>
+                <input type="number" name="nasc" id="inasc">
+            </p>
+
+            <p>
+                <label for="sexo">Sexo:</label>
+                <input type="radio" name="sexo" id="imasc" value="masc"> 
+                <label for="imasc">Masculino</label>
+                <input type="radio" name="sexo" id="ifem" value="fem">
+                <label for="ifem">Feminino</label>
+            </p>
+
+            <p>
+                <input type="button" value="Verificar" id="btn-verificar">
+            </p>
+
+            <div id="div-resultado">
+                <p id="para-result"></p>
+                <img src="mulher-crianca.jpg" alt="" id="img-result">
+            </div>
+        </div> 
+    </main>
+
+
+    <script>
+        let botao = document.getElementById('btn-verificar');
+        let imagem = document.getElementById('img-result');
+        let paragrafo = document.getElementById('para-result');
+        let blockResult = document.getElementById('div-resultado');
+        botao.addEventListener('click', verificador);
+
+        function verificador() {
+            blockResult.style.display = 'flex';
+            let nasc = document.getElementById('inasc').value;
+            let anoAtual = new Date();
+            let ano = anoAtual.getFullYear();
+            let idade = ano - Number(nasc);
+            let sex = document.querySelector("input[name='sexo']:checked").value;
+            if (sex === 'masc') {
+                paragrafo.innerHTML = `Detectamos um <strong>HOMEM</strong> com ${idade} anos`;
+            } else {
+                paragrafo.innerHTML = `Detectamos um <strong>MULHER</strong> com ${idade} anos`;
+            }  
+
+
+            if (sex === 'masc' && idade <= 10) {
+                imagem.setAttribute('src', 'homem-crianca.jpg');
+            } else if(sex === 'masc' && idade <= 25) {
+                imagem.setAttribute('src', 'homem-adolescente.jpg');
+            } else if (sex === 'masc' && idade <= 50) {
+                imagem.setAttribute('src', 'homem-adulto.jpg');
+            } else if(sex === 'masc' && idade <= 70) {
+                imagem.setAttribute('src', 'homem-velho.jpg');
+            } else if (sex === 'masc' && idade > 70) {
+                imagem.setAttribute('src', 'homem-idoso.jpg');
+            } else if (sex === 'fem' && idade <= 10) {
+                imagem.setAttribute('src', 'mulher-crianca.jpg');
+            } else if (sex === 'fem' && idade <= 25) {
+                imagem.setAttribute('src', 'mulher-adolescente.jpg');
+            } else if (sex === 'fem' && idade <= 50) {
+                imagem.setAttribute('src', 'mulher-adulta.jpg');
+            } else if (sex === 'fem' && idade <= 70) {
+                imagem.setAttribute('src', 'mulher-velha.jpg');
+            } else {
+                imagem.setAttribute('src', 'mulher-idosa.jpg');
+            }
+        }
+    </script>
+</body>
+</html>
