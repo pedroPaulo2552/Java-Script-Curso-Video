@@ -7,6 +7,10 @@
     font-family: sans-serif;
 }
 
+body {
+    background-color: #407bd4;
+}
+
 header {
     margin: 20px 0px 20px 0px;
     text-align: center;
@@ -20,7 +24,7 @@ section {
 }
 
 main {
-    background-color: red;
+    background-color: white;
     width: 500px;
     padding: 15px;
     border-radius: 20px;
@@ -32,7 +36,7 @@ main p {
 }
 
 .inputs-campo {
-    border: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.288);
     border-radius: 5px;
     width: 200px;
     height: 22px;
@@ -40,6 +44,8 @@ main p {
 }
 
 #btn {
+    background-color: #3966AA;
+    color: white;
     border: 1px solid rgba(0, 0, 0, 0.507);
     width: 100px;
     height: 25px;
@@ -51,7 +57,14 @@ main p {
 }
 
 #btn:hover {
-    border: 1px solid black;
+    color: #0168FF;
+    background-color: white;
     translate: 0px -2px;
     cursor: pointer;
+}
+
+footer {
+    font-style: italic;
+    font-family: serif;
+    text-decoration: underline;
 }
