@@ -8,11 +8,14 @@ function gerarTabuada() {
         return;
     }
     numero = Number(numero);
-    let c = numero;
+    let c = 0;
 
     let sele = document.getElementById('itab');
-
-    let op = document.createElement('tab', 'option');
-    op.innerHTML = 'teste'
-    sele.appendChild(op);
+    sele.innerHTML = ' '
+    while (c <=10) {
+        let op = document.createElement('option');
+        op.innerHTML = `${numero} x ${c} = ${numero * c}`;
+        sele.appendChild(op);
+        c++;
+    }
 }
