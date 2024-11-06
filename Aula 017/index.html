@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <div id="resp"></div>
+
+
+<script>
+    let num = [5, 1, 3, 7, 2];
+    window.alert(num.indexOf(3));
+    let c = 0;
+    let divBlock = document.getElementById('resp');
+    for(let c in num) {
+        divBlock.innerHTML += `<p>Vetor na posição ${c} [${num[c]}]</p>`;
+    };
+</script>    
+</body>
+</html>
